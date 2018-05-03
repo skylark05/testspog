@@ -1,0 +1,14 @@
+jobs:
+  - name: j1
+    type: runSh
+    steps:
+      - TASK:
+          script:
+            - echo "hello, world"
+  - name: j2
+    type: runSh
+    steps:
+      - IN: j1
+      - TASK:
+          script:
+            - echo "hello, world"  
