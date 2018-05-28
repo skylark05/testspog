@@ -10,5 +10,13 @@ jobs:
     steps:
       - IN: j1
       - TASK:
+          runtime:
+            options:
+              env:
+                - IMG_VER_NAME: "v6.5.1"
+                - IMG_VER_NAME_DASH: "v6-5-1"
           script:
-            - echo "hello, world"  
+            - echo "hello, world"
+            - cat foo.txt
+            - shipctl replace foo.txt
+            - cat foo.txt
