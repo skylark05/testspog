@@ -1,0 +1,6 @@
+Here is IMG_VER_NAME: ${IMG_VER_NAME}
+And here is IMG_VER_NAME_DASH: ${IMG_VER_NAME_DASH}
+
+Without the appropriate brackets
+Here is IMG_VER_NAME: $IMG_VER_NAME
+And here is IMG_VER_NAME_DASH: $IMG_VER_NAME_DASH
