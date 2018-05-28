@@ -1,3 +1,11 @@
+resources:
+  - name: repo_testspog
+    type: gitRepo
+    integration: github
+    versionTemplate:
+      sourceName: skylark05/testspog
+      branch: master
+
 jobs:
   - name: j1
     type: runSh
@@ -9,7 +17,7 @@ jobs:
     type: runSh
     steps:
       - IN: j1
-      - IN: testspog_master
+      - IN: repo_testspog
         switch: off
       - TASK:
           runtime:
