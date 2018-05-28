@@ -1,6 +1,5 @@
-Here is IMG_VER_NAME: ${IMG_VER_NAME}
-And here is IMG_VER_NAME_DASH: ${IMG_VER_NAME_DASH}
+Here is IMG_VER_NAME with {}: ${IMG_VER_NAME}
+Here is IMG_VER_NAME_DASH with {}: ${IMG_VER_NAME_DASH}
 
-Without the appropriate brackets
-Here is IMG_VER_NAME: $IMG_VER_NAME
-And here is IMG_VER_NAME_DASH: $IMG_VER_NAME_DASH
+Here is IMG_VER_NAME without {}: $IMG_VER_NAME
+And here is IMG_VER_NAME_DASH without {}: $IMG_VER_NAME_DASH
