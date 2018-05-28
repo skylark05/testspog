@@ -27,7 +27,7 @@ jobs:
                 - IMG_VER_NAME_DASH: "v6-5-1"
           script:
             - echo "hello, world"
-            - pushd $(shipctl get_resource_state testspog_master)
+            - pushd $(shipctl get_resource_state repo_testspog)
             - cat foo.txt
             - shipctl replace foo.txt
             - cat foo.txt
