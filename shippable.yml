@@ -5,11 +5,6 @@ resources:
     versionTemplate:
       sourceName: skylark05/testspog
       branch: master
-      
-  - name: nightly-trigger
-    type: time
-    seed:
-      interval: 0 22 * * *
 
 jobs:
   - name: j1
