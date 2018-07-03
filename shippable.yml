@@ -1,34 +1,19 @@
 resources:
-  - name: repo_testspog
+  - name: repo_test_pr
     type: gitRepo
     integration: github
     versionTemplate:
-      sourceName: skylark05/testspog
+      sourceName: skylark05/test_pr
       branch: master
+      buildOnPullRequest: true
 
 jobs:
   - name: j1
     type: runSh
     steps:
+      - IN: repo_test_pr
+        showBuildStatus: true
       - TASK:
           script:
             - echo "hello, world"
-  - name: j2
-    type: runSh
-    steps:
-      - IN: j1
-      - IN: repo_testspog
-        switch: off
-      - TASK:
-          runtime:
-            options:
-              env:
-                - IMG_VER_NAME: "v6.5.1"
-                - IMG_VER_NAME_DASH: "v6-5-1"
-          script:
-            - echo "hello, world"
-            - pushd $(shipctl get_resource_state repo_testspog)
-            - cat foo.txt
-            - shipctl replace foo.txt
-            - cat foo.txt
-            - popd
+            - test_pr is now at $(shipctl get_resource_version_name repo_test_pr)
