@@ -17,3 +17,5 @@ jobs:
           script:
             - echo "hello, world"
             - echo test_pr is now at $(shipctl get_resource_version_name repo_test_pr)
+            - echo "going to sleep..."
+            - sleep 600
