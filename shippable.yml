@@ -19,3 +19,45 @@ jobs:
             - echo test_pr is now at $(shipctl get_resource_version_name repo_test_pr)
             - echo "going to sleep..."
             - sleep 600
+
+  - name: A
+    type: runSh
+    steps:
+      - TASK:
+          script:
+            - echo "hello, world"
+            
+  - name: B
+    type: runSh
+    steps:
+      - IN: A
+      - TASK:
+          script:
+            - echo "hello, world"
+            
+  - name: C
+    type: runSh
+    steps:
+      - IN: A
+      - TASK:
+          script:
+            - echo "hello, world"
+            
+  - name: D
+    type: runSh
+    steps:
+      - IN: A
+      - TASK:
+          script:
+            - echo "hello, world"
+            
+  - name: E
+    type: runSh
+    dependencyMode: strict
+    steps:
+      - IN: B
+      - IN: C
+      - IN: D
+      - TASK:
+          script:
+            - echo "hello, world"
