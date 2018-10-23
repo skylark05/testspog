@@ -29,6 +29,7 @@ jobs:
             
   - name: B
     type: runSh
+    dependencyMode: immediate
     steps:
       - IN: A
       - TASK:
@@ -37,6 +38,7 @@ jobs:
             
   - name: C
     type: runSh
+    dependencyMode: immediate
     steps:
       - IN: A
       - TASK:
@@ -45,6 +47,7 @@ jobs:
             
   - name: D
     type: runSh
+    dependencyMode: immediate
     steps:
       - IN: A
       - TASK:
