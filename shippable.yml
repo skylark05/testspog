@@ -6,6 +6,13 @@ resources:
       sourceName: skylark05/test_pr
       branch: master
       buildOnPullRequest: true
+  - name: foo_params
+    type: params
+    versionTemplate:
+      params:
+        IMAGE_MAP: |
+                    "us-east-1": "ami-12345"
+                    "us-east-2": "ami-67890"
 
 jobs:
   - name: j1
@@ -23,8 +30,11 @@ jobs:
   - name: A
     type: runSh
     steps:
+      - IN: foo_params
       - TASK:
           script:
+            - echo 'Image map is $IMAGE_MAP' > foo.txt
+            - shipctl replace foo.txt
             - echo "hello, world"
             
   - name: B
