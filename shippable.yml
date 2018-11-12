@@ -35,6 +35,7 @@ jobs:
           script:
             - echo 'Image map is $IMAGE_MAP' > foo.txt
             - shipctl replace foo.txt
+            - cat foo.txt
             - echo "hello, world"
             
   - name: B
