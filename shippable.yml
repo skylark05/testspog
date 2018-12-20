@@ -88,5 +88,8 @@ jobs:
       - IN: C
       - IN: D
       - TASK:
+          runtime:
+            options:
+              imageName: drydock/c7
           script:
             - echo "hello, world"
